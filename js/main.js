@@ -93,17 +93,29 @@ function runWeatherUpdater() {
 }
 
 function initMap() {
-    let map = new ymaps.Map('ymap', {
-        center: [47.208735, 38.936694],
-        zoom: 13
-    });
+    let scriptEle = document.createElement("script");
 
-    map.controls.remove('geolocationControl'); // удаляем геолокацию
-    map.controls.remove('searchControl'); // удаляем поиск
-    map.controls.remove('trafficControl'); // удаляем контроль трафика
-    map.controls.remove('typeSelector'); // удаляем тип
-    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-    map.controls.remove('rulerControl'); // удаляем контрол правил
+    scriptEle.setAttribute("src", "https://api-maps.yandex.ru/2.1/?apikey=-&lang=ru_RU");
+    scriptEle.setAttribute("async", true);
+
+    document.body.appendChild(scriptEle);
+
+    // success event
+    scriptEle.addEventListener("load", () => {
+        ymaps.ready(() => {
+            let map = new ymaps.Map('ymap', {
+                center: [47.208735, 38.936694],
+                zoom: 13
+            });
+
+            map.controls.remove('geolocationControl'); // удаляем геолокацию
+            map.controls.remove('searchControl'); // удаляем поиск
+            map.controls.remove('trafficControl'); // удаляем контроль трафика
+            map.controls.remove('typeSelector'); // удаляем тип
+            map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+            map.controls.remove('rulerControl'); // удаляем контрол правил
+        });
+    });
 }
 
 function loadHrefSmoothScroll() {
@@ -162,7 +174,7 @@ let map = document.getElementById("ymap");
 window.addEventListener("scroll", () => {
     if (!mapLoaded && map.getBoundingClientRect().top < window.innerHeight) {
         mapLoaded = true;
-        ymaps.ready(initMap);
+        initMap();
     }
 });
 
