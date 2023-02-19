@@ -388,11 +388,17 @@ nav li:not(:last-child):after {
 .go-to-card-vertical {
   width: calc(50% - 15px);
 }
+.go-to-card-vertical .go-to-card__preview {
+  border-radius: 10px;
+}
 
 .go-to-card__info-vertical {
-  position: relative;
+  position: absolute;
   border-radius: 0 0 10px 10px;
   width: 100%;
+  height: auto;
+  top: auto;
+  bottom: 0;
 }
 .go-to-card__info-vertical > .go-to-card__info-btn {
   position: relative;
