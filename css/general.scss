@@ -1,0 +1,174 @@
+$accent: rgb(79, 178, 143);
+
+:root {
+  --edge-margin: 20px;
+  @media (max-width: 480px) {
+    --edge-margin: 10px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  line-height: 1rem;
+}
+
+.stars5 {
+  content: url("../img/Ico/5Stars.svg");
+  height: 20px;
+  align-self: flex-start;
+}
+
+.stars4 {
+  content: url("../img/Ico/4Stars.svg");
+  height: 20px;
+  align-self: flex-start;
+}
+
+.stars3 {
+  content: url("../img/Ico/3Stars.svg");
+  height: 20px;
+  align-self: flex-start;
+}
+
+// region Button
+
+.btn, .map-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+
+  background: rgba(115, 255, 205, 0.5);
+  box-shadow: 0 0 4px rgba(115, 255, 205, 0.8);
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 20px;
+  color: #232323;
+  text-align: center;
+  line-height: 1em;
+
+  transition: background-color .4s, box-shadow .4s;
+}
+
+.btn:hover, .map-btn:hover, button:hover {
+  background: rgba(115, 255, 205, 0.9);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+  color: #000;
+}
+
+.map-btn {
+  padding: 12px 12px 12px 48px;
+
+  &:after {
+    content: url("data:image/svg+xml,%3Csvg width='31' height='26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.25087 25.017C1.04179 25.0199 0.83769 24.9531 0.670872 24.827C0.54163 24.735 0.436137 24.6135 0.363107 24.4727C0.290076 24.3318 0.251605 24.1756 0.250872 24.017V5.017C0.23949 4.79893 0.299798 4.58313 0.422586 4.40256C0.545373 4.22199 0.723891 4.08658 0.930872 4.017L9.93087 1.017C10.1298 0.957225 10.3419 0.957225 10.5409 1.017L20.2508 4.01697L28.9509 1.117C29.1013 1.06741 29.2613 1.05424 29.4177 1.07858C29.5742 1.10292 29.7227 1.16407 29.8509 1.257C29.9698 1.34601 30.0674 1.4604 30.1366 1.59187C30.2058 1.72333 30.2448 1.86856 30.2509 2.017V21.017C30.2514 21.2266 30.1861 21.4312 30.064 21.6016C29.942 21.7721 29.7695 21.8999 29.5709 21.967L20.5709 24.967C20.3719 25.0268 20.1598 25.0268 19.9609 24.967L10.2509 22.067L1.57087 25.017C1.46469 25.0314 1.35705 25.0314 1.25087 25.017ZM11.2509 3.3708L19.2509 5.80129V22.708L11.2281 20.2293C11.2431 20.1601 11.2509 20.0889 11.2509 20.017V3.3708ZM9.25085 3.40075L2.25087 5.737V22.627L9.28655 20.2818C9.26306 20.1962 9.25085 20.1072 9.25085 20.017V3.40075ZM28.2509 20.347L21.2509 22.6833V5.78591L28.2509 3.407V20.347Z' fill='%23323232'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    left: 12px;
+    bottom: 6px;
+  }
+}
+
+// endregion
+
+
+.informer {
+  list-style: none;
+
+  li {
+    position: relative;
+    margin: 0 0 0 35px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1em;
+
+    color: #000;
+
+    i {
+      font-style: normal;
+      font-weight: 400;
+
+      color: #323232;
+
+      i {
+        font-style: normal;
+        font-size: 14px;
+      }
+    }
+  }
+
+  li:not(:first-child) {
+    margin: 15px 0 0 35px;
+  }
+
+  li:before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 22px;
+    width: 22px;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .clock:before {
+    background-image: url("../img/Ico/Clock.svg");
+  }
+
+  .transport:before {
+    background-image: url("../img/Ico/Car.svg");
+  }
+
+  .calendar:before {
+    background-image: url("../img/Ico/Calendar.svg");
+  }
+
+  .location:before {
+    background-image: url("../img/Ico/Location.svg");
+  }
+
+  .community:before {
+    background-image: url("../img/Ico/Community.svg");
+  }
+
+  .price:before {
+    background-image: url("../img/Ico/Dolar.svg");
+  }
+
+  .link:before {
+    background-image: url("../img/Ico/Link.svg");
+  }
+
+  .phone:before {
+    background-image: url("../img/Ico/Phone.svg");
+  }
+
+  .cloud:before {
+    background-image: url("../img/Ico/Cloud.svg");
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  background: #C8C8C8;
+  border-radius: 4px;
+}

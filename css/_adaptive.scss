@@ -1,0 +1,101 @@
+@media (pointer: none), (pointer: coarse) { /*If mobile*/
+
+}
+
+@media (max-width: 1203px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1150px) {
+  .page-wrapper {
+    max-width: calc(100% - 4px);
+  }
+
+  .go-to-card__preview {
+    width: 100%;
+  }
+
+  .go-to-card__preview-wrapper {
+    justify-content: center;
+
+    border-radius: 10px 10px 0 0;
+  }
+
+  .go-to-card {
+    width: calc(50% - 15px);
+  }
+
+  .go-to-card__info {
+    position: relative;
+
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+
+    > .go-to-card__info-btn {
+      position: relative;
+      margin: 40px 0 0 0;
+    }
+  }
+
+  #w420 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .popular-places {
+    display: none !important;
+  }
+
+  #ymap {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 986px) {
+  .about {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:"s"
+                                "d"
+                                "i";
+  }
+
+  .about__text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .go-to-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .go-to-card__info-header {
+    margin: 15px 0 10px 0;
+    font-size: 28px;
+  }
+
+  .go-to-card__info-description {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-height: 494px) {
+  .map > .wrapper{
+    height: 100vh;
+  }
+}
