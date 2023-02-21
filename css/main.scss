@@ -1,6 +1,13 @@
 @import "general.scss";
 
+.main-wrapper{
+  position: relative;
+  width: 100%;
+  background: white;
+}
+
 .page-wrapper {
+
   width: 1200px;
   max-width: calc(100% - 4px);
 
@@ -63,6 +70,9 @@ h3 {
     width: 100%;
     height: 700px;
     object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   h2 {
@@ -148,6 +158,176 @@ nav {
 
 // endregion
 
+//region UserFeedback
+
+.feedback-btn {
+  position: fixed;
+  display: block;
+
+  cursor: pointer;
+
+  z-index: 9;
+
+  bottom: 15px;
+  right: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  background: rgba(115, 255, 205, 0.5);
+  box-shadow: 0 0 4px rgba(115, 255, 205, 0.8);
+  border-radius: 8px;
+
+  transition: background-color .3s;
+}
+
+.feedback-btn:hover {
+  background: rgb(115, 255, 205);
+}
+
+.feedback-btn:after {
+  content: url("../img/Ico/Comment.svg");
+  position: absolute;
+  opacity: .8;
+
+  left: 48%;
+  top: 56%;
+  transform: translateX(-50%) translateY(-50%) scale(.9);
+}
+
+
+.feedback-form {
+  position: fixed;
+  display: none;
+  opacity: 0;
+
+  backdrop-filter: blur(6px);
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  z-index: 10;
+
+  .form {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: difference;
+
+    width: 376px;
+    height: 470px;
+    max-width: 100%;
+
+    z-index: 11;
+
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    background: rgba(240, 240, 240, 0.7);
+    border: 2px solid rgba(240, 240, 240, 0.35);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+
+    border-radius: 10px;
+
+    input {
+      width: 296px;
+      height: 42px;
+
+      background: rgba(240, 240, 240, 0.5);
+      border: 2px solid rgba(240, 240, 240, 0.35);
+      border-radius: 10px;
+      outline: none;
+
+      text-align: center;
+      line-height: 1em;
+      font-family: Comfortaa, serif;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      color: #141414;
+    }
+
+    input::placeholder {
+      font-size: 18px;
+      line-height: 20px;
+
+      color: #5A5A5A;
+    }
+
+    .btn {
+      width: 240px;
+    }
+
+    .email {
+      margin-top: 20px;
+    }
+  }
+
+  .hide-after::after {
+    display: none;
+  }
+
+  .message {
+    position: relative;
+    cursor: text;
+
+    width: 296px;
+    height: 184px;
+
+    margin: 30px 0;
+
+    color: #141414;
+    overflow-y: scroll;
+
+    background: rgba(240, 240, 240, 0.5);
+    border: 2px solid rgba(240, 240, 240, 0.35);
+    border-radius: 10px;
+
+    p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      min-width: 100%;
+      max-width: 100%;
+      max-height: 184px;
+      word-wrap: anywhere;
+
+      text-align: center;
+
+      border: none;
+      outline: none;
+
+      font-size: 18px;
+      line-height: 1em;
+      color: #141414;
+    }
+
+    p::after {
+      content: 'Сообщение';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      width: 100%;
+
+      font-size: 18px;
+      line-height: 1em;
+      color: #5A5A5A;
+    }
+  }
+}
+
+//endregion
+
 // region About
 
 .about {
@@ -158,7 +338,7 @@ nav {
   grid-template-columns: 440px auto;
   grid-template-rows: 462px auto;
   grid-template-areas:"s d"
-                               "i d";
+                     "i d";
   gap: 20px;
 
   .informer {
@@ -198,6 +378,10 @@ nav {
 
   .swiper-slide {
     object-fit: cover;
+  }
+
+  @media (max-width: 450px) {
+    height: 60vh;
   }
 }
 
@@ -290,19 +474,24 @@ nav {
 
 .go-to-card__info-btn {
   position: absolute;
-  bottom: 20px;
-}
-
-
-.go-to-card__preview-wrapper-vertical {
-  border-radius: 10px 10px 0 0;
+  bottom: var(--edge-margin);
 }
 
 .go-to-card-vertical {
   width: calc(50% - 15px);
 
-  .go-to-card__preview{
-    border-radius: 10px;
+  .go-to-card__preview {
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media (max-width: 1150px) {
+    .go-to-card__preview {
+      max-height: 500px;
+    }
+    .go-to-card__preview-wrapper-vertical {
+      border-radius: 10px 10px 0 0;
+    }
   }
 }
 
@@ -780,5 +969,95 @@ nav {
 
 // endregion
 
+//region Adaptive
 
-@import "adaptive";
+@media (max-width: 1203px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1150px) {
+  .page-wrapper {
+    max-width: calc(100% - 4px);
+  }
+
+  .go-to-card__preview {
+    width: 100%;
+  }
+
+  .go-to-card__preview-wrapper {
+    justify-content: center;
+
+    border-radius: 10px 10px 0 0;
+  }
+
+  .go-to-card {
+    width: calc(50% - 15px);
+  }
+
+  .go-to-card__info {
+    position: relative;
+
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+
+    > .go-to-card__info-btn {
+      position: relative;
+      margin: 40px 0 0 0;
+    }
+  }
+
+  #w420 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .popular-places {
+    display: none !important;
+  }
+
+  #ymap {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 986px) {
+  .about {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:"s"
+                                "d"
+                                "i";
+  }
+
+  .about__text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .go-to-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .go-to-card__info-header {
+    margin: 15px 0 10px 0;
+    font-size: 28px;
+  }
+
+  .go-to-card__info-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-height: 494px) {
+  .map > .wrapper {
+    height: 100vh;
+  }
+}
+
+//endregion

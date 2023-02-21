@@ -2,21 +2,21 @@
     font-display: swap;
     font-family: Comfortaa;
     font-weight: 400;
-    src: url("../font/Comfortaa-Regular.ttf");
+    src: url("../font/Comfortaa-Regular.woff2");
 }
 
 @font-face {
     font-display: swap;
     font-family: Comfortaa;
     font-weight: 500;
-    src: url("../font/Comfortaa-Medium.ttf");
+    src: url("../font/Comfortaa-Medium.woff2");
 }
 
 @font-face {
     font-display: swap;
     font-family: Comfortaa;
     font-weight: 600;
-    src: url("../font/Comfortaa-SemiBold.ttf");
+    src: url("../font/Comfortaa-SemiBold.woff2");
 }
 
 body {

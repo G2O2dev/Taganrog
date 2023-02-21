@@ -41,7 +41,7 @@ a {
   padding: 12px 30px;
   background: rgba(115, 255, 205, 0.5);
   box-shadow: 0 0 4px rgba(115, 255, 205, 0.8);
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
   font-size: 20px;
@@ -201,9 +201,9 @@ main {
   grid-template-rows: auto 462px auto auto;
   grid-template-areas: "h h" "s i" "d d" "f f";
   grid-column-gap: 20px;
-  width: calc(100% - 44px);
+  width: calc(100% - var(--edge-margin) * 2 + 4);
   margin-top: 30px;
-  padding: 20px;
+  padding: var(--edge-margin);
   background: rgba(249, 245, 240, 0.6);
   border: 2px solid rgba(0, 0, 0, 0.4);
   border-radius: 30px;
@@ -216,6 +216,16 @@ main h1 {
   line-height: 1em;
   padding-bottom: 15px;
   color: #000;
+}
+@media (max-width: 600px) {
+  main h1 {
+    font-size: 42px;
+  }
+}
+@media (max-width: 450px) {
+  main h1 {
+    font-size: 36px;
+  }
 }
 main h3 {
   font-weight: 500;
@@ -249,7 +259,6 @@ main .info {
 }
 main .info header {
   display: flex;
-  flex-wrap: wrap;
   height: 102px;
   margin: 8px 8px 0 8px;
 }
@@ -300,6 +309,11 @@ main .info > a {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.2em;
+}
+@media (max-width: 420px) {
+  .description p {
+    font-size: 18px;
+  }
 }
 .description b {
   font-weight: 600;
@@ -387,9 +401,9 @@ main .info > a {
     gap: 20px;
   }
 }
-@media (max-width: 600px) {
-  main h1 {
-    font-size: 42px;
+@media (max-width: 380px) {
+  .date {
+    display: none;
   }
 }
 

@@ -75,9 +75,9 @@ main {
   "f f";
   grid-column-gap: 20px;
 
-  width: calc(100% - 44px);
+  width: calc(100% - var(--edge-margin) * 2 + 4);
   margin-top: 30px;
-  padding: 20px;
+  padding: var(--edge-margin);
 
   background: rgba(249, 245, 240, 0.6);
   border: 2px solid rgba(0, 0, 0, 0.4);
@@ -93,6 +93,14 @@ main {
     padding-bottom: 15px;
 
     color: #000;
+
+    @media (max-width: 600px) {
+      font-size: 42px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 36px;
+    }
   }
 
   h3 {
@@ -136,7 +144,6 @@ main {
 
     header {
       display: flex;
-      flex-wrap: wrap;
 
       height: 102px;
       margin: 8px 8px 0 8px;
@@ -204,6 +211,10 @@ main {
     font-weight: 400;
     font-size: 20px;
     line-height: 1.2em;
+    
+    @media (max-width: 420px) {
+      font-size: 18px;
+    }
   }
 
   b {
@@ -322,9 +333,9 @@ main {
   }
 }
 
-@media (max-width: 600px) {
-  main h1 {
-    font-size: 42px;
+@media (max-width: 380px) {
+  .date {
+    display: none;
   }
 }
 
