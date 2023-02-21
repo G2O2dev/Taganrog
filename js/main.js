@@ -108,12 +108,12 @@ function initMap() {
                 zoom: 13
             });
 
-            map.controls.remove('geolocationControl'); // удаляем геолокацию
-            map.controls.remove('searchControl'); // удаляем поиск
-            map.controls.remove('trafficControl'); // удаляем контроль трафика
-            map.controls.remove('typeSelector'); // удаляем тип
-            map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-            map.controls.remove('rulerControl'); // удаляем контрол правил
+            map.controls.remove('geolocationControl');
+            map.controls.remove('searchControl');
+            map.controls.remove('trafficControl');
+            map.controls.remove('typeSelector');
+            map.controls.remove('zoomControl');
+            map.controls.remove('rulerControl');
         });
     });
 }
@@ -126,7 +126,7 @@ function loadHrefSmoothScroll() {
         const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
         const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-        const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+        const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset) + 700;
 
         if ('requestAnimationFrame' in window === false) {
             window.scroll(0, destinationOffsetToScroll);
@@ -177,4 +177,33 @@ window.addEventListener("scroll", () => {
         initMap();
     }
 });
+
+let feedbackForm = document.getElementsByClassName('feedback-form')[0];
+function openModal() {
+    feedbackForm.style.display = "block";
+    feedbackForm.animate([{opacity: '0'}, {opacity: '1'}], 300).addEventListener('finish', function () {
+        feedbackForm.style.opacity = "1";
+    });
+}
+
+function hideModal() {
+    if(event.target !== event.currentTarget) return;
+    feedbackForm.animate([{opacity: '1'}, {opacity: '0'}], 300).addEventListener('finish', function () {
+        feedbackForm.style.opacity = "0";
+        feedbackForm.style.display = "none";
+    });
+}
+
+function updatePlaceholder() {
+    let msg = document.getElementById("msg-txt");
+    if (msg.textContent === "") {
+        msg.classList.remove("hide-after");
+    } else {
+        msg.classList.add("hide-after");
+    }
+}
+
+function redirectFocus() {
+    document.getElementById("msg-txt").focus();
+}
 
