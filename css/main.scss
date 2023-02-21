@@ -1,6 +1,6 @@
 @import "general.scss";
 
-.main-wrapper{
+.main-wrapper {
   position: relative;
   width: 100%;
   background: white;
@@ -523,6 +523,8 @@ nav {
 
   > .el-wrapper {
     gap: 20px;
+
+    align-items: flex-start;
   }
 
   article {
@@ -532,6 +534,8 @@ nav {
     background: rgba(236, 255, 252, 0.4);
     border: 2px solid rgba(0, 0, 0, 0.15);
     border-radius: 15px;
+
+    transition: border .2s;
 
     overflow: hidden;
 
@@ -677,6 +681,10 @@ nav {
         content: '';
       }
     }
+  }
+
+  article:hover {
+    border: 2px solid $accent;
   }
 }
 

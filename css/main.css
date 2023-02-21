@@ -561,6 +561,7 @@ nav li:not(:last-child):after {
 }
 .excursions > .el-wrapper {
   gap: 20px;
+  align-items: flex-start;
 }
 .excursions article {
   cursor: pointer;
@@ -568,6 +569,7 @@ nav li:not(:last-child):after {
   background: rgba(236, 255, 252, 0.4);
   border: 2px solid rgba(0, 0, 0, 0.15);
   border-radius: 15px;
+  transition: border 0.2s;
   overflow: hidden;
 }
 .excursions article header {
@@ -676,6 +678,9 @@ nav li:not(:last-child):after {
   left: 0;
   background: rgba(0, 0, 0, 0.2);
   content: "";
+}
+.excursions article:hover {
+  border: 2px solid rgb(79, 178, 143);
 }
 
 .feedback {
