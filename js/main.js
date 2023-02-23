@@ -100,12 +100,11 @@ function initMap() {
 
     document.body.appendChild(scriptEle);
 
-    // success event
     scriptEle.addEventListener("load", () => {
         ymaps.ready(() => {
             let map = new ymaps.Map('ymap', {
                 center: [47.208735, 38.936694],
-                zoom: 13
+                zoom: 13.3
             });
 
             map.controls.remove('geolocationControl');
@@ -114,50 +113,33 @@ function initMap() {
             map.controls.remove('typeSelector');
             map.controls.remove('zoomControl');
             map.controls.remove('rulerControl');
-        });
-    });
-}
 
-function loadHrefSmoothScroll() {
-    function scrollIt(destination, duration = 1600, callback) {
-        const start = window.pageYOffset;
-        const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+            let places = document.getElementsByClassName("place");
+            let cluster = new ymaps.Clusterer();
+            for (let i = 0; i < places.length; i++) {
+                let cords = [parseFloat(places[i].getAttribute("data-coordinates-x")), parseFloat(places[i].getAttribute("data-coordinates-y"))];
+                let placemark = new ymaps.Placemark(cords, {
+                    iconCaption: places[i].getElementsByClassName("place__header")[0].innerHTML,
+                }, {});
+                cluster.add(placemark);
 
-        const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-        const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-        const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset) + 700;
+                places[i].addEventListener('click', () => {
+                    map.panTo(cords);
+                    setTimeout(function () {
+                        map.setCenter(cords);
+                        map.setZoom(16, {smooth: true, duration: 300});
+                    }, 630);
+                });
 
-        if ('requestAnimationFrame' in window === false) {
-            window.scroll(0, destinationOffsetToScroll);
-            if (callback) {
-                callback();
+                placemark.events.add('click', function (e) {
+                    map.panTo(cords);
+                    setTimeout(function () {
+                        map.setCenter(cords);
+                        map.setZoom(16, {smooth: true, duration: 300});
+                    }, 630);
+                });
             }
-            return;
-        }
-
-        function scroll() {
-            const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-            const t = Math.min(1, ((now - startTime) / duration));
-            const timeFunction = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-            window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
-
-            if (window.pageYOffset === destinationOffsetToScroll) {
-                if (callback) {
-                    callback();
-                }
-                return;
-            }
-
-            requestAnimationFrame(scroll);
-        }
-
-        scroll();
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(function (el) {
-        el.addEventListener("click", function () {
-            scrollIt(document.querySelector(this.getAttribute('href')));
+            map.geoObjects.add(cluster);
         });
     });
 }
@@ -166,7 +148,6 @@ loadAboutSlider();
 runTimeUpdater();
 runWeatherUpdater();
 loadFeedbackSlider();
-loadHrefSmoothScroll();
 
 
 let mapLoaded = false;
@@ -177,33 +158,4 @@ window.addEventListener("scroll", () => {
         initMap();
     }
 });
-
-let feedbackForm = document.getElementsByClassName('feedback-form')[0];
-function openModal() {
-    feedbackForm.style.display = "block";
-    feedbackForm.animate([{opacity: '0'}, {opacity: '1'}], 300).addEventListener('finish', function () {
-        feedbackForm.style.opacity = "1";
-    });
-}
-
-function hideModal() {
-    if(event.target !== event.currentTarget) return;
-    feedbackForm.animate([{opacity: '1'}, {opacity: '0'}], 300).addEventListener('finish', function () {
-        feedbackForm.style.opacity = "0";
-        feedbackForm.style.display = "none";
-    });
-}
-
-function updatePlaceholder() {
-    let msg = document.getElementById("msg-txt");
-    if (msg.textContent === "") {
-        msg.classList.remove("hide-after");
-    } else {
-        msg.classList.add("hide-after");
-    }
-}
-
-function redirectFocus() {
-    document.getElementById("msg-txt").focus();
-}
 

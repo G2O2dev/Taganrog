@@ -12,20 +12,28 @@
 </head>
 
 <body>
+
+
+<div id="burger">
+    <div></div>
+</div>
+
 <header class="start">
     <video id="background-video" autoplay loop muted poster="img/StartBg.webp">
         <source src="img/VideoBg.webm" type="video/mp4">
     </video>
     <h2>Таганрог</h2>
-    <nav>
-        <ul>
-            <li><a href="#about-section">О городе</a></li>
-            <li><a href="#where-to-go-section">Куда сходить</a></li>
-            <li><a href="#excursions-section">Экскурсии</a></li>
-            <li><a href="#feedback-section">Отзывы</a></li>
-            <li><a href="#map-section">Карта</a></li>
-        </ul>
-    </nav>
+    <div id="header-box">
+        <nav id="header">
+            <ul>
+                <li><a href="#about-section">О городе</a></li>
+                <li><a href="where-to-go.html">Куда сходить</a></li>
+                <li><a href="excursion.html">Экскурсии</a></li>
+                <li><a href="#feedback-section">Отзывы</a></li>
+                <li><a href="#map-section">Карта</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <div class="main-wrapper">
@@ -48,11 +56,14 @@
                 пляжей в черте города, Таганрог сложно назвать курортом. Скорее этот город понравится любознательным
                 путешественникам.
                 <br><br>
-                История поселений на территории современного Таганрога насчитывает около 3000 лет. Этот город не напрасно
-                носит статус музея под открытым небом – свидетели многих эпох сохранились и дошли до наших дней в отличном
+                История поселений на территории современного Таганрога насчитывает около 3000 лет. Этот город не
+                напрасно
+                носит статус музея под открытым небом – свидетели многих эпох сохранились и дошли до наших дней в
+                отличном
                 состоянии. Старый Таганрог даже получил почетное звание историко-культурного заповедника.
                 <br><br>
-                Посетив этот город вы сможете прогуляться по его старинным улочкам, с такими певучими именами – Греческая,
+                Посетив этот город вы сможете прогуляться по его старинным улочкам, с такими певучими именами –
+                Греческая,
                 Петровская, Александровская, переулки Итальянский, Крепостной. Любуясь фасадами особняков эпохи
                 дореволюционной России, лестницами, видами на залив. Они отлично сохранили атмосферу старинного южного
                 города, которую так ценят путешественники.
@@ -64,335 +75,9 @@
                 <li class="cloud">Погода сейчас: <i id="informer-weather">(загружаю)</i></li>
                 <li class="community">Население: <i>245 120 чел. <i>(2021 г.)</i></i></li>
                 <li class="clock">Время в Таганроге: <i id="informer-time"><i>(UTC +3)</i></i></li>
-                <li class="link">Оф. Сайт: <a target="_ blank" href="https://tagancity.ru/">https://tagancity.ru/</a></li>
+                <li class="link">Оф. Сайт: <a target="_ blank" href="https://tagancity.ru/">https://tagancity.ru/</a>
+                </li>
             </ul>
-        </section>
-
-        <section id="where-to-go-section" class="where-to-go">
-            <h3>Куда сходить?</h3>
-            <div class="el-wrapper">
-                <article class="go-to-card">
-                    <div class="go-to-card__preview-wrapper"><img src="img/WhereToGo/Alferaki.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Alferaki.webp" alt class="go-to-card__light">
-                    <div class="go-to-card__info" id="w420">
-                        <h6 class="go-to-card__info-header">Дворец Алфераки</h6>
-                        <p class="go-to-card__info-description">Что еще обязательно надо посмотреть в Таганроге? Дворец Алфераки — самое красивое здание, возведенное в 1848 году богатым купцом Алфераки ставший одной из ярких достопримечательнстей. Построено в стиле нового барокко — стены и потолки
-                            богато украшены лепниной, сделанной лучшими мастерами Италии, роскошная мебель ручной работы. Архитектор — известный и востребованный в то время мастер Штакеншнейдер.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-                <article class="go-to-card">
-                    <div class="go-to-card__preview-wrapper"><img src="img/WhereToGo/Depald.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Depald.webp" loading="lazy" alt class="go-to-card__light">
-                    <div class="go-to-card__info">
-                        <h6 class="go-to-card__info-header">Депальдовская лестница</h6>
-                        <p class="go-to-card__info-description">Депальдовская лестница — считается символом города и самым любимым местом прогулок для местных жителей и гостей, с любого участка которой открывается великолепный вид.
-                            Лестница обязана своим появлением купцу и меценату Депальдо, этническому греку. Он выделил громадные деньги на ее строительство, и к осени 1823 года проект был готов. Сооружение длиной 113 м имеет 142 ступени, пешеходная часть выполнена из сарматского известняка.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-                <article class="go-to-card">
-                    <div class="go-to-card__preview-wrapper"><img src="img/WhereToGo/Monument.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Monument.webp" loading="lazy" alt class="go-to-card__light">
-                    <div class="go-to-card__info">
-                        <h6 class="go-to-card__info-header">Монумент воинской Славы</h6>
-                        <p class="go-to-card__info-description">В окрестностях в мае 1980 года открыли монумент воинской Славы, он находится рядом с поселком Самбек на самой высокой точке. Посвящен защитникам этой земли — солдатам дивизий из Азербайждана. Мемориал представляет собой две бетонные стены с
-                            фигурами воинов.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-                <article class="go-to-card">
-                    <div class="go-to-card__preview-wrapper"><img src="img/WhereToGo/Theatre.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Theatre.webp" loading="lazy" alt class="go-to-card__light">
-                    <div class="go-to-card__info">
-                        <h6 class="go-to-card__info-header">Драматический театр</h6>
-                        <p class="go-to-card__info-description">Драматический театр основан в 1827 году, в труппе были крепостные актеры и музыканты, ставились пьесы Гоголя, Шекспира, Грибоедова. С 1944 года он носит имя Чехова. В репертуаре постановки для взрослых и детей, произведения классические и
-                            современных авторов.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-
-                <article class="go-to-card go-to-card-vertical">
-                    <div class="go-to-card__preview-wrapper go-to-card__preview-wrapper-vertical"><img src="img/WhereToGo/Raevskaya.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Raevskaya.webp" loading="lazy" alt class="go-to-card__light">
-                    <div class="go-to-card__info go-to-card__info-vertical">
-                        <h6 class="go-to-card__info-header">Памятник Фаине Раневской</h6>
-                        <p class="go-to-card__info-description">В Таганроге установлен памятник Фаине Раневской. Бронзовая скульптура изображает Раневскую в роли Ляли из фильма «Подкидыш». Автор памятника – ростовский скульптор Давид Бегалов. Памятник установлен в Таганроге, на улице Фрунзе, перед домом, в котором прошло детство и юность актрисы.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-                <article class="go-to-card go-to-card-vertical">
-                    <div class="go-to-card__preview-wrapper go-to-card__preview-wrapper-vertical"><img src="img/WhereToGo/Petr1.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Petr1.webp" loading="lazy" alt class="go-to-card__light">
-                    <div class="go-to-card__info go-to-card__info-vertical">
-                        <h6 class="go-to-card__info-header">Памятник Петру I</h6>
-                        <p class="go-to-card__info-description">Воздвигнутый еще до революции, монумент посвящен Петру I, единственный, отлитый под руководством автора – М.М.Антокольского. Установлен в 1903 году. Высота фигуры – 3,44 м, гранитный пьедестал высотой 5, 4м. Фигура императора изображена в мундире, во весь рост, в правой руке он держит трость, в левой – шпагу.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-                <article class="go-to-card go-to-card-vertical">
-                    <div class="go-to-card__preview-wrapper go-to-card__preview-wrapper-vertical"><img src="img/WhereToGo/Aquapark.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Aquapark.webp" loading="lazy" alt class="go-to-card__light">
-                    <div class="go-to-card__info go-to-card__info-vertical">
-                        <h6 class="go-to-card__info-header">Аквапарк «Лазурный»</h6>
-                        <p class="go-to-card__info-description">Открытый аквапарк «Лазурный» предлагает гостям города развлечения в период с конца мая до сентября ежедневно. Расположен на берегу Таганрогского залива. На территории аквакомплекса часто проводят вечерние представления и праздники, предлагаются акции. Оборудованы водные горки различной высоты — «космический полет», «гидротруба», «циклон», бассейны, зона с шезлонгами.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-                <article class="go-to-card go-to-card-vertical">
-                    <div class="go-to-card__preview-wrapper go-to-card__preview-wrapper-vertical"><img src="img/WhereToGo/Park.webp" loading="lazy" alt class="go-to-card__preview"></div>
-                    <img src="img/WhereToGo/Park.webp" loading="lazy" alt class="go-to-card__light">
-                    <div class="go-to-card__info go-to-card__info-vertical">
-                        <h6 class="go-to-card__info-header">Парк им. Горького</h6>
-                        <p class="go-to-card__info-description">В выходные дни местные жители с удовольствием проводят время в парке им. Горького. Отличное место отдыха с ребенком — здесь можно покататься на лошадке или пони, побродить по лабиринтам или попрыгать на батуте. Есть детская площадка, на которой проводятся конкурсы. Взрослые могут поиграть в шахматы, выпить чашечку кофе в кафе. По отзывам таганрожцев, это самое уютное и красивое место, где можно отдохнуть, развлечься, заняться спортом и сделать замечательные фото города.</p>
-                        <a href="" class="go-to-card__info-btn map-btn">Показать на карте</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="excursions-section" class="excursions">
-            <h3>Экскурсии</h3>
-            <div class="el-wrapper">
-                <article onclick="window.open('excursions/excursion.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/1.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Неожиданный Таганрог</h6>
-                        </div>
-                    </header>
-                    <p>Обзорная прогулка по достопримечательностям города и погружение в его нетривиальную историю.</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">1,5 часа</li>
-                            <li class="transport">На машине</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>1800 ₽<br><i>за человека</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion2.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/5.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Обзорная экскурсия по Таганрогу</h6>
-                        </div>
-                    </header>
-                    <p>Морской и тёплый Таганрог — торговый центр юга имперской России и родной город Антоши Чехонте, способный очаровать своими пастельными красками.</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">1,5 часа</li>
-                            <li class="transport">На машине</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>1800 ₽<br><i>за человека</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion3.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/8.webp')">
-                        <div class="wrapper">
-                            <div class="stars4"></div>
-                            <h6>Индивидуальная обзорная экскурсия на автомобиле по Таганрогу</h6>
-                        </div>
-                    </header>
-                    <p>Не упустите возможность увидеть весь Таганрог за 3 часа!</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">2 часа</li>
-                            <li class="transport">Пешая</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>5500 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion4.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/11.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Нескучный Чехов: авторская прогулка по Таганрогу</h6>
-                        </div>
-                    </header>
-                    <p>Отправляйтесь на экспресс-прогулку по историческому центру Таганрога! За 2,5 часа вы увидите все самое яркое, чем славится город.</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">2.5 часа</li>
-                            <li class="transport">Пешая</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>3800 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion5.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/14.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Обзорная экскурсия по Таганрогу на транспорте туриста</h6>
-                        </div>
-                    </header>
-                    <p>Не упустите возможность увидеть весь Таганрог за 3 часа!</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">3 часа</li>
-                            <li class="transport">И пешком и на колёсах</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>5000 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion6.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/20.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Купеческий Таганрог</h6>
-                        </div>
-                    </header>
-                    <p>Экскурсия «Купеческий Таганрог» переносит нас в город 19 века.</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">2.5 часа</li>
-                            <li class="transport">Пешеходная</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>4000 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion7.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/24.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Поездка в Танаис</h6>
-                        </div>
-                    </header>
-                    <p>Поездка в Танаис – первый из созданных в России археологических музеев-заповедников.</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">2.5 часа</li>
-                            <li class="transport">Пешеходная</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>7000 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion8.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/26.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Автомобильно-пешеходная экскурсия на авто гида</h6>
-                        </div>
-                    </header>
-                    <p>Морской и тёплый Таганрог — торговый центр юга имперской России и родной город Антоши Чехонте, способный очаровать своими пастельными красками.</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">3 часа</li>
-                            <li class="transport">И пешком и на колёсах</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>5000 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion9.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/32.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Греческие уголки Таганрога и прогулка на яхте</h6>
-                        </div>
-                    </header>
-                    <p>Вас ждет незабываемая прогулка на яхте с купанием в Таганрогском заливе и экскурсия по самым знаменитым греческим местам Таганрога!</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">3 часа</li>
-                            <li class="transport">И пешком и на колёсах</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>2050 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion10.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/34.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Экскурсия из Таганрога в Старочеркасск на теплоходе</h6>
-                        </div>
-                    </header>
-                    <p>Вас ждет незабываемая прогулка на яхте с купанием в Таганрогском заливе и экскурсия по самым знаменитым греческим местам Таганрога!</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">12 часов</li>
-                            <li class="transport">На теплоходе</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>2850 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion11.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/37.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Хутор-фест</h6>
-                        </div>
-                    </header>
-                    <p>В современном мире у городского жителя приоритеты меняются. Вкусная еда от фермеров, которую не купить ни в одном супермаркете, единение с природой, чистой и нетронутой, пребывание в местах, где время останавливается и перестаёт спешить, бездонное звёздное небо и песни вокруг костра — простые вещи, которые особенно ценятся сейчас. Всё это ждет вас на фестивале в хуторе Петровском.</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">3 часа</li>
-                            <li class="transport">Пешеходная</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>1100 ₽<br><i>за экскурсию</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion12.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/39.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Театральный променад по-чеховски</h6>
-                        </div>
-                    </header>
-                    <p>Приглашаем вас на «Театральный променад по-чеховски». Кроме увлекательной экскурсии с повествованием о городе и театре, вас ждет спектакль «Шуточка» по рассказам А.П. Чехова с участием артиста театра и кино Сергея Баринова!</p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">2 часа</li>
-                            <li class="transport">Пешеходная</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>950 ₽<br><i>за человека</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion13.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/41.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Таганрог танцует!</h6>
-                        </div>
-                    </header>
-                    <p>Вас ждет небольшая экскурсия «Таганрог танцует», которая даст возможность окунуться в мир танцевального искусства города. После вы побываете на музыкальном вечере «Испанский вечер фламенко» с участием коллектива «La chispa flamenca». Под звуки самой зажигательной танцевальной музыки вы не только увидите выступления артистов, но поучаствуете в мастер-классе по фламенко и в розыгрыше призов.<p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">2.5 часа</li>
-                            <li class="transport">Пешеходная</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>1600 ₽<br><i>за человека</i></p>
-                    </div>
-                </article>
-                <article onclick="window.open('excursions/excursion14.html','_self')">
-                    <header style="background-image: url('img/Excursion/Slides/45.webp')">
-                        <div class="wrapper">
-                            <div class="stars5"></div>
-                            <h6>Ждем в гости на уху!</h6>
-                        </div>
-                    </header>
-                    <p>Вас ждет неординарная экскурсия по набережной живописного Таганрога! Вы услышите истории о древней Меотиде, о народах, населявших в древние времена Таганрог и о знаменитых людях, любивших гулять на набережной. А еще вы отведаете местную кухню и послушаете душевные песни под гитару.<p>
-                    <div class="wrapper">
-                        <ul class="informer">
-                            <li class="clock">2 часа</li>
-                            <li class="transport">Пешеходная</li>
-                            <li class="calendar">В любое время</li>
-                        </ul>
-                        <p>1200 ₽<br><i>за человека</i></p>
-                    </div>
-                </article>
-            </div>
         </section>
 
         <section id="feedback-section" class="feedback">
@@ -412,7 +97,10 @@
                             <img src="img/Feedback/Preview.webp" loading="lazy" alt class="feedback__preview">
                             <h6 class="feedback__title">Таганрог летом, ожидания и реальность</h6>
                             <p class="feedback__text">
-                                В июле 2021 года были с семьей в Ростовской области и решили заехать на пару дней посмотреть Таганрог. У города богатая история, его основал Петр 1, как первую военно-морскую базу в России, в нем родились известные люди А.П.Чехов и Фаина Раневская.Мы путешествовали на
+                                В июле 2021 года были с семьей в Ростовской области и решили заехать на пару дней
+                                посмотреть Таганрог. У города богатая история, его основал Петр 1, как первую
+                                военно-морскую базу в России, в нем родились известные люди А.П.Чехов и Фаина
+                                Раневская.Мы путешествовали на
                                 машине и по пути заехали посмотреть маяк в Мержаново.
                             </p>
                             <a class="feedback__btn" href="">читать дальше</a>
@@ -427,10 +115,15 @@
                                 </div>
                             </div>
                             <img src="img/Feedback/Preview2.webp" loading="lazy" alt class="feedback__preview">
-                            <h6 class="feedback__title">Я обязательно вернусь сюда. Это удивительный город со старинной атмосферой и морем.</h6>
+                            <h6 class="feedback__title">Я обязательно вернусь сюда. Это удивительный город со старинной
+                                атмосферой и морем.</h6>
                             <p class="feedback__text">
-                                Неделю назад я вернулась из отпуска. Мне удалось побывать в нескольких городах, 2 странах и на 2 морях и все это за 2 недели. О части из них я уже поделилась впечатлениями в предыдущих отзывах, настал черёд рассказать о Таганроге. Таганрог мы с моим молодым человеком
-                                посетили во второй день нашего отпуска. Останавливались мы в Ростове-на-Дону, а до Таганрога добирались на автобусе от ростовского автовокзала. Путь занял около 1.5 часов.
+                                Неделю назад я вернулась из отпуска. Мне удалось побывать в нескольких городах, 2
+                                странах и на 2 морях и все это за 2 недели. О части из них я уже поделилась
+                                впечатлениями в предыдущих отзывах, настал черёд рассказать о Таганроге. Таганрог мы с
+                                моим молодым человеком
+                                посетили во второй день нашего отпуска. Останавливались мы в Ростове-на-Дону, а до
+                                Таганрога добирались на автобусе от ростовского автовокзала. Путь занял около 1.5 часов.
                             </p>
                             <a class="feedback__btn" href="">читать дальше</a>
                         </div>
@@ -446,7 +139,10 @@
                             <img src="img/Feedback/Preview.webp" loading="lazy" alt class="feedback__preview">
                             <h6 class="feedback__title">Таганрог летом, ожидания и реальность</h6>
                             <p class="feedback__text">
-                                В июле 2021 года были с семьей в Ростовской области и решили заехать на пару дней посмотреть Таганрог. У города богатая история, его основал Петр 1, как первую военно-морскую базу в России, в нем родились известные люди А.П.Чехов и Фаина Раневская.Мы путешествовали на
+                                В июле 2021 года были с семьей в Ростовской области и решили заехать на пару дней
+                                посмотреть Таганрог. У города богатая история, его основал Петр 1, как первую
+                                военно-морскую базу в России, в нем родились известные люди А.П.Чехов и Фаина
+                                Раневская.Мы путешествовали на
                                 машине и по пути заехали посмотреть маяк в Мержаново.
                             </p>
                             <a class="feedback__btn" href="">читать дальше</a>
@@ -461,10 +157,15 @@
                                 </div>
                             </div>
                             <img src="img/Feedback/Preview2.webp" loading="lazy" alt class="feedback__preview">
-                            <h6 class="feedback__title">Я обязательно вернусь сюда. Это удивительный город со старинной атмосферой и морем.</h6>
+                            <h6 class="feedback__title">Я обязательно вернусь сюда. Это удивительный город со старинной
+                                атмосферой и морем.</h6>
                             <p class="feedback__text">
-                                Неделю назад я вернулась из отпуска. Мне удалось побывать в нескольких городах, 2 странах и на 2 морях и все это за 2 недели. О части из них я уже поделилась впечатлениями в предыдущих отзывах, настал черёд рассказать о Таганроге. Таганрог мы с моим молодым человеком
-                                посетили во второй день нашего отпуска. Останавливались мы в Ростове-на-Дону, а до Таганрога добирались на автобусе от ростовского автовокзала. Путь занял около 1.5 часов.
+                                Неделю назад я вернулась из отпуска. Мне удалось побывать в нескольких городах, 2
+                                странах и на 2 морях и все это за 2 недели. О части из них я уже поделилась
+                                впечатлениями в предыдущих отзывах, настал черёд рассказать о Таганроге. Таганрог мы с
+                                моим молодым человеком
+                                посетили во второй день нашего отпуска. Останавливались мы в Ростове-на-Дону, а до
+                                Таганрога добирались на автобусе от ростовского автовокзала. Путь занял около 1.5 часов.
                             </p>
                             <a class="feedback__btn" href="">читать дальше</a>
                         </div>
@@ -478,10 +179,15 @@
                                 </div>
                             </div>
                             <img src="img/Feedback/Preview2.webp" loading="lazy" alt class="feedback__preview">
-                            <h6 class="feedback__title">Я обязательно вернусь сюда. Это удивительный город со старинной атмосферой и морем.</h6>
+                            <h6 class="feedback__title">Я обязательно вернусь сюда. Это удивительный город со старинной
+                                атмосферой и морем.</h6>
                             <p class="feedback__text">
-                                Неделю назад я вернулась из отпуска. Мне удалось побывать в нескольких городах, 2 странах и на 2 морях и все это за 2 недели. О части из них я уже поделилась впечатлениями в предыдущих отзывах, настал черёд рассказать о Таганроге. Таганрог мы с моим молодым человеком
-                                посетили во второй день нашего отпуска. Останавливались мы в Ростове-на-Дону, а до Таганрога добирались на автобусе от ростовского автовокзала. Путь занял около 1.5 часов.
+                                Неделю назад я вернулась из отпуска. Мне удалось побывать в нескольких городах, 2
+                                странах и на 2 морях и все это за 2 недели. О части из них я уже поделилась
+                                впечатлениями в предыдущих отзывах, настал черёд рассказать о Таганроге. Таганрог мы с
+                                моим молодым человеком
+                                посетили во второй день нашего отпуска. Останавливались мы в Ростове-на-Дону, а до
+                                Таганрога добирались на автобусе от ростовского автовокзала. Путь занял около 1.5 часов.
                             </p>
                             <a class="feedback__btn" href="">читать дальше</a>
                         </div>
@@ -500,41 +206,57 @@
                 <div class="popular-places">
                     <p class="popular-places__header">Популярные места</p>
                     <div class="popular-places__places">
-                        <div class="place">
+                        <div class="place" data-coordinates-x="47.213534" data-coordinates-y="38.928277">
                             <p class="place__header">Дворец Алфераки</p>
                             <p class="place__description">ул. Фрунзе, 41</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.199840" data-coordinates-y="38.895983">
+                            <p class="place__header">Приморский парк</p>
+                            <p class="place__description">ул. Инструментальная, 15Б</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.213055" data-coordinates-y="38.938127">
+                            <p class="place__header">Депальдовская лестница</p>
+                            <p class="place__description">ул. Греческая, 84</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.216089" data-coordinates-y="38.928623">
+                            <p class="place__header">Драматический театр</p>
+                            <p class="place__description">Петровская ул. 90</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.210805" data-coordinates-y="38.933730">
+                            <p class="place__header">Памятник Фаине Раневской</p>
+                            <p class="place__description">ул. Фрунзе, 10</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.205022" data-coordinates-y="38.946415">
+                            <p class="place__header">Памятник Петру I</p>
+                            <p class="place__description">Cквер Петра I</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.222487" data-coordinates-y="38.935162">
+                            <p class="place__header">Аквапарк «Лазурный»</p>
+                            <p class="place__description">ул. Адмирала Крюйса, 6</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.220156" data-coordinates-y="38.926121">
+                            <p class="place__header">Парк им. Горького</p>
+                            <p class="place__description">ул. Социалистическая, 1</p>
                         </div>
-                        <div class="place">
-                            <p class="place__header">Дворец Алфераки</p>
-                            <p class="place__description">ул. Фрунзе, 41</p>
+                        <div class="place" data-coordinates-x="47.209286" data-coordinates-y="38.941590">
+                            <p class="place__header">Дворец Александра I</p>
+                            <p class="place__description">ул. Греческая 40</p>
+                        </div>
+                        <div class="place" data-coordinates-x="47.215988" data-coordinates-y="38.918063">
+                            <p class="place__header">Музей Лавка Чеховых</p>
+                                <p class="place__description">ул. Александровская 100</p>
+                        </div>
+                        <div class="place" data-coordinates-x="47.256021" data-coordinates-y="38.914380">
+                            <p class="place__header">Дуб черешчатый</p>
+                            <p class="place__description">ул. Дзержинского, 171-6</p>
+                        </div>
+                        <div class="place" data-coordinates-x="48.126551" data-coordinates-y="38.793125">
+                            <p class="place__header">Монумент воинской Славы</p>
+                            <p class="place__description">1-я Лесная ул. 11</p>
+                        </div>
+                        <div class="place" data-coordinates-x="47.202342" data-coordinates-y="38.928852">
+                            <p class="place__header">Келья Павла Таганрогского</p>
+                            <p class="place__description">ул. Тургеневский переулок, 82</p>
                         </div>
                     </div>
                 </div>
@@ -544,7 +266,6 @@
 </div>
 
 <div class="feedback-btn" onclick="openModal()"></div>
-
 <div class="feedback-form" onclick="hideModal()">
     <div class="form">
         <input placeholder="Имя" class="name" type="text">
@@ -556,7 +277,9 @@
     </div>
 </div>
 
+<script src="https://api-maps.yandex.ru/2.1/?apikey=-&lang=ru_RU"></script>
 <script src="js/swiper.js"></script>
 <script src="js/main.js"></script>
+<script src="js/general.js"></script>
 </body>
 </html>
