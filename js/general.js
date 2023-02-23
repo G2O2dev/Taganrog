@@ -94,6 +94,7 @@ function showFloatingMenu() {
 
     header.style.transition = "all .4s";
 }
+
 function hideFloatingMenu() {
     isHeaderFloating = false;
 
@@ -111,6 +112,7 @@ function hideFloatingMenu() {
 
 
 burgerBtn.addEventListener("click", () => {
+    console.log("click 1")
     if (burgerBtn.classList.contains("open")) {
         hideBurgerMenu();
     } else {
@@ -148,12 +150,17 @@ function showBurgerMenu() {
 
     header.style.display = "block";
     header.style.left = "0";
+
+    setTimeout(function () {
+        document.addEventListener('click', hideBurgerMenu);
+    }, 50);
 }
 
-function hideBurgerMenu() {
+function hideBurgerMenu(e) {
     burgerBtn.classList.remove("open");
 
     header.style.left = (-header.getBoundingClientRect().width).toString() + "px";
+    document.removeEventListener('click', hideBurgerMenu);
 }
 
 
@@ -161,7 +168,7 @@ const showBurgerMediaQuery = window.matchMedia('(max-width: 944px)');
 showBurgerMediaQuery.onchange = (e) => {
     if (isHeaderFloating) {
         header.removeAttribute("style");
-        if(isBurgerEnabled) {
+        if (isBurgerEnabled) {
             disableBurger();
         }
         showFloatingMenu();

@@ -431,12 +431,17 @@ h3 {
 }
 .el-wrapper > a {
   cursor: pointer;
-  max-width: 369px;
+  width: 369px;
   background: rgba(236, 255, 252, 0.4);
   border: 2px solid rgba(0, 0, 0, 0.15);
   border-radius: 15px;
   transition: border 0.2s;
   overflow: hidden;
+}
+@media (max-width: 450px) {
+  .el-wrapper > a {
+    width: 100%;
+  }
 }
 .el-wrapper > a header {
   position: relative;
