@@ -1,64 +1,12 @@
 @import "general.scss";
+@import "header.scss";
 
 body {
   width: 1150px;
+  max-width: 100%;
   margin: 20px auto;
   box-sizing: border-box;
 }
-
-//region Header
-
-.page-header {
-  width: calc(100% - 4px);
-
-  background: #f6f6f6;
-  border: 2px solid rgba(0, 0, 0, 0.4);
-  border-radius: 30px;
-}
-
-.page-header ul {
-  position: relative;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.page-header li {
-  list-style: none;
-  padding: 20px;
-  cursor: pointer;
-}
-
-.page-header li:hover a {
-  color: $accent;
-}
-
-.page-header li a {
-  text-decoration: none;
-  font-weight: 500;
-  line-height: 1em;
-  font-size: 28px;
-  color: #000;
-
-  transition: color .3s;
-}
-
-.page-header li:not(:last-child):after {
-  position: absolute;
-
-  width: 2px;
-  height: 34px;
-  margin-left: 19px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  background: rgba(0, 0, 0, 0.3);
-
-  content: '';
-}
-
-//endregion
 
 // region Main
 
@@ -303,18 +251,6 @@ main {
 // endregion
 
 //region Adaptive
-
-@media (max-width: 1149px) {
-  body {
-    width: calc(100% - 4px);
-  }
-}
-
-@media (max-width: 948px) {
-  .page-header li:not(:last-child):after {
-    content: none;
-  }
-}
 
 @media (max-width: 850px) {
   main {

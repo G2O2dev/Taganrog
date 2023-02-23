@@ -1,10 +1,14 @@
-$accent: rgb(79, 178, 143);
+$accent: #5be5ca;
 
 :root {
   --edge-margin: 20px;
   @media (max-width: 480px) {
     --edge-margin: 10px;
   }
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 * {
@@ -172,3 +176,250 @@ a {
   background: #C8C8C8;
   border-radius: 4px;
 }
+
+#header {
+  transition: all .4s;
+}
+
+
+//region UserFeedback
+
+.feedback-btn {
+  position: fixed;
+  display: block;
+
+  cursor: pointer;
+
+  z-index: 9;
+
+  bottom: 15px;
+  right: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  background: rgba(115, 255, 205, 0.5);
+  box-shadow: 0 0 4px rgba(115, 255, 205, 0.8);
+  border-radius: 8px;
+
+  transition: background-color .3s;
+}
+
+.feedback-btn:hover {
+  background: rgb(115, 255, 205);
+}
+
+.feedback-btn:after {
+  content: url("../img/Ico/Comment.svg");
+  position: absolute;
+  opacity: .8;
+
+  left: 48%;
+  top: 56%;
+  transform: translateX(-50%) translateY(-50%) scale(.9);
+}
+
+
+.feedback-form {
+  position: fixed;
+  display: none;
+  opacity: 0;
+
+  backdrop-filter: blur(6px);
+  background: #00000046;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  z-index: 10;
+
+  .form {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: difference;
+
+    width: 376px;
+    height: 470px;
+    max-width: 100%;
+
+    z-index: 11;
+
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    background: rgba(240, 240, 240, 0.7);
+    border: 2px solid rgba(240, 240, 240, 0.45);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+
+    border-radius: 10px;
+
+    input {
+      width: 296px;
+      height: 42px;
+
+      background: rgba(240, 240, 240, 0.75);
+      border: 2px solid rgba(240, 240, 240, 0.45);
+      border-radius: 10px;
+      outline: none;
+
+      text-align: center;
+      line-height: 1em;
+      font-family: Comfortaa, serif;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      color: #141414;
+    }
+
+    input::placeholder {
+      font-size: 18px;
+      line-height: 20px;
+
+      color: #5A5A5A;
+    }
+
+    .btn {
+      width: 240px;
+    }
+
+    .email {
+      margin-top: 20px;
+    }
+  }
+
+  .hide-after::after {
+    display: none;
+  }
+
+  .message {
+    position: relative;
+    cursor: text;
+
+    width: 296px;
+    height: 184px;
+
+    margin: 30px 0;
+
+    color: #141414;
+    overflow-y: scroll;
+
+    background: rgba(240, 240, 240, 0.5);
+    border: 2px solid rgba(240, 240, 240, 0.35);
+    border-radius: 10px;
+
+    p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      min-width: 100%;
+      max-width: 100%;
+      max-height: 184px;
+      word-wrap: anywhere;
+
+      text-align: center;
+
+      border: none;
+      outline: none;
+
+      font-size: 18px;
+      line-height: 1em;
+      color: #141414;
+    }
+
+    p::after {
+      content: 'Сообщение';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      width: 100%;
+
+      font-size: 18px;
+      line-height: 1em;
+      color: #5A5A5A;
+    }
+  }
+}
+
+//endregion
+
+
+
+//region Burger
+
+$burgerColor: #5a5a5a;
+
+#burger{
+  display: none;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  left: 0;
+  transition-duration: .4s;
+
+  z-index: 26;
+  cursor: pointer;
+
+  > div, > div:after, > div:before{
+    transition-duration: .4s;
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: $burgerColor;
+    border-radius: 4px;
+  }
+  > div {
+    top: 30px;
+    left: 15px;
+
+    &:before{
+      content: "";
+      top: -10px;
+    }
+
+    &:after{
+      top: 10px;
+      content: "";
+    }
+  }
+
+  &.open {
+    > div {
+      transition-duration: .4s;
+      background: transparent;
+
+      &:before{
+        transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+      }
+
+      &:after{
+        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+      }
+    }
+    &:hover > div {
+      &:before, &:after{
+        background-color: $accent;
+      }
+    }
+  }
+  &:not([class^="open"]){
+    &:hover > div {
+      &, &:before, &:after{
+        background-color: $accent;
+      }
+    }
+  }
+}
+
+//endregion

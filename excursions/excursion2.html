@@ -14,9 +14,9 @@
 <header class="page-header">
     <nav>
         <ul>
-            <li><a href="../index.html#about-section">О городе</a></li>
-            <li><a href="../index.html#where-to-go-section">Куда сходить</a></li>
-            <li><a href="../index.html#excursions-section">Экскурсии</a></li>
+            <li><a href="../index.html">О городе</a></li>
+            <li><a href="../where-to-go.html">Куда сходить</a></li>
+            <li><a href="../excursion.html">Экскурсии</a></li>
             <li><a href="../index.html#feedback-section">Отзывы</a></li>
             <li><a href="../index.html#map-section">Карта</a></li>
         </ul>
@@ -100,7 +100,20 @@
     </div>
 </main>
 
+<div class="feedback-btn" onclick="openModal()"></div>
+<div class="feedback-form" onclick="hideModal()">
+    <div class="form">
+        <input placeholder="Имя" class="name" type="text">
+        <input placeholder="Почта" class="email" type="email">
+        <div class="message" onclick="redirectFocus()">
+            <p id="msg-txt" contenteditable="true" oninput="updatePlaceholder()" class=""></p>
+        </div>
+        <a href="" class="btn">Отправить</a>
+    </div>
+</div>
+
 <script src="../js/swiper.js"></script>
 <script src="../js/excursion.js"></script>
+<script src="../js/general.js"></script>
 </body>
 </html>
