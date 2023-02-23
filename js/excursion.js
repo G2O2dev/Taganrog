@@ -1,4 +1,4 @@
-let aboutSwiper = new Swiper('.swiper', {
+const aboutSwiper = new Swiper('.swiper', {
     loop: true,
     lazy: true,
     pagination: {
@@ -7,7 +7,7 @@ let aboutSwiper = new Swiper('.swiper', {
     },
 });
 
-let sliderLight = document.getElementsByClassName("slider-light")[0];
+const sliderLight = document.getElementsByClassName("slider-light")[0];
 sliderLight.src = aboutSwiper.slides[aboutSwiper.activeIndex].src;
 aboutSwiper.on('slideChange', function () {
     sliderLight.animate([

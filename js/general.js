@@ -42,6 +42,8 @@ function redirectFocus() {
 
 //endregion
 
+//region Burger
+
 const header = document.getElementById("header");
 const headerBox = document.getElementById("header-box");
 const headerUl = header.getElementsByTagName("ul")[0];
@@ -52,6 +54,14 @@ let isBurgerEnabled = false;
 let isHeaderFloating = false;
 
 window.addEventListener("scroll", () => updateScroll());
+
+burgerBtn.addEventListener("click", () => {
+    if (burgerBtn.classList.contains("open")) {
+        hideBurgerMenu();
+    } else {
+        showBurgerMenu();
+    }
+});
 
 function updateScroll() {
     if (isHeaderFloating) {
@@ -98,27 +108,18 @@ function showFloatingMenu() {
 function hideFloatingMenu() {
     isHeaderFloating = false;
 
+    header.removeAttribute("style");
+    headerBox.removeAttribute("style");
+
     if (showBurgerMediaQuery.matches) {
         disableBurger();
         hideBurgerMenu();
+        header.style.transition = "none";
     }
-
-    header.removeAttribute("style");
-    headerBox.removeAttribute("style");
 
     for (let i = 0; i !== headerTexts.length; i++)
         headerTexts[i].removeAttribute("style")
 }
-
-
-burgerBtn.addEventListener("click", () => {
-    console.log("click 1")
-    if (burgerBtn.classList.contains("open")) {
-        hideBurgerMenu();
-    } else {
-        showBurgerMenu();
-    }
-});
 
 function enableBurger() {
     isBurgerEnabled = true;
@@ -174,3 +175,5 @@ showBurgerMediaQuery.onchange = (e) => {
         showFloatingMenu();
     }
 };
+
+//endregion
